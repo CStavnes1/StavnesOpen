@@ -8,7 +8,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!--Firebase Reference-->
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <!--font-->
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -28,12 +30,43 @@
       margin: auto;
       min-height:200px;
   }
-
   /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
+  @media (max-width: 374px) {
     .carousel-caption {
       display: none; 
     }
+  }
+  .table {
+    font-size: 12px;
+    font-family: sans-serif;
+  }
+  body {
+    background-color: #272727
+  }
+  .tourninfo {
+    color:#FFFFFF;
+    
+  }
+  p {
+    color:#FFFFFF;
+  }
+  .desc {
+    font-size: 10px;
+  }
+  .col-sm-4 {
+    color:#272727;
+
+  }
+  .champs{
+    color:#D4AF37;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #D3D3D3;
+  }
+
+  .cimages {
+    width: 400px;
+    opacity: 0.75;
   }
   </style>
 </head>
@@ -51,13 +84,13 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <!-- <li><a href="#">Home</a></li> -->
         <li><a href="#">Tournamnet</a></li>
-        <li><a href="#">Champions Dinner</a></li>
-        <li><a href="#">Contact</a></li>
+        <!-- <li><a href="#">Champions Dinner</a></li> -->
+        <!-- <li><a href="#">Contact</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        
       </ul>
     </div>
   </div>
@@ -72,19 +105,21 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+      <div class="item active" style="width:100%;">
+        <img class="cimages" src="https://static1.squarespace.com/static/52969c2be4b0c5f2207b2690/52c6f36ce4b0c2f00150456f/53e3f0afe4b0e0b89362d191/1407447603608/ChaskaTC9.jpg" alt="Image">
         <div class="carousel-caption">
-          <h3>Welcome to the 2018 Stavnes Open</h3>
+          <h2>Welcome to the 2018 Stavnes Open</h2>
+          <h3>Chaska Town Course</h3>
           <p>Where the champions are</p>
         </div>      
       </div>
 
-      <div class="item">
-        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+      <div class="item" style="width:100%;">
+        <img class="cimages" src="https://arborlakes.net/cms-files/patio-1.jpg" alt="Image">
         <div class="carousel-caption">
-          <h3>Inaugural Champions Dinner</h3>
-          <p>Location to be Announced</p>
+          <h2>Inaugural Champions Dinner</h2>
+          <h1>Pittsburg Blue</h1>
+          <p>
         </div>      
       </div>
     </div>
@@ -101,40 +136,48 @@
 </div>
   
 <div class="container text-center">    
-  <h3>2018 Stavnes Open</h3>
-  <h4>Saturday Aug, 10th</h4>
-  <h3>Chaska Town Course<h3>
+  <h3 class="tourninfo">2018 Stavnes Open</h3>
+  <h4 class="tourninfo">Saturday Aug, 11th</h4>
+  <h3 class="tourninfo">Chaska Town Course<h3>
 
 
   <div class="row">
     <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Tournamnet</p>
+      <a href="http://www.chaskatowncourse.com/">
+        <img src="http://cdn.cybergolf.com/images/1036/content-wrapper-backstretch_bg-hole-18-1920by1280-web.jpg" class="img-responsive" style="width:100%" alt="Image">
+      </a>
+        <p>Chaska Town Course</p>
+        <p class="desc">Designed by renowned golf course architect Arthur Hills, the Chaska Town Course sprawls over 285 acres of oak groves, open prairie and marshlands.</p>
     </div>
-    <div class="col-sm-4"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Champions Dinner</p>    
+    <div class="col-sm-4 champdinner"> 
+      <a href="http://www.pittsburghbluesteak.com/index.php">
+        <img src="https://arborlakes.net/cms-files/patio-1.jpg" class="img-responsive" style="width:100%" alt="Image">
+      </a>
+      <p>Champions Dinner</p>
+      <p>Fri, Aug 10 7pm</p>   
     </div>
+
+
 
 
     <div class="col-sm-4">
-      <div class="panel panel-info">
+      <div class="panel panel-default">
         <div class="panel-heading">2018 Registration</div>
           <div class="panel-body">
             <form>
               <div class="form-group">
-                <label for="">Name</label>
-                <input type="text" id="train-name" class="form-control" placeholder="Enter Name">
+                <label for=""></label>
+                <input type="text" id="player-name" class="form-control" placeholder="First and Last Name">
               </div>
 
-              <button type="submit" id="add-train" class="btn btn-default">Register</button>
+              <button type="submit" id="add-player" class="btn btn-default">Register</button>
 
             </form>
           </div>
-      <table class="table">
+      <table class="table" id="player-table">
         <thead>
           <tr>
-            <th>Confirmed Players 2018</th>
+            <th>Players 2018</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -147,8 +190,8 @@
 
 
 
-<div class="panel panel-info">
-  <div class="panel-heading">Champions</div>
+<div class="panel panel-default">
+  <div class="panel-heading champs">Champions</div>
     <div class="panel-body">
       <table class="table table-hover" id="train-table">
         <thead>
@@ -160,14 +203,14 @@
         </thead>
         <tbody>
           <tr>
-            <td>2017</td>
-            <td>Chris Stavnes & Dan Langaard</td>
-            <td>Willingers Golf CLub</td>
+            <td class="champs">2017</td>
+            <td class="champs">Chris Stavnes & Dan Langaard</td>
+            <td class="champs">Willingers Golf CLub</td>
           </tr>
           <tr>
-            <td>2016</td>
-            <td>Patrick Middlestaedt & David Hedlund </td>
-            <td>Bluff Creek Golf Course</td>
+            <td class="champs">2016</td>
+            <td class="champs">Patrick Middlestaedt & David Hedlund </td>
+            <td class="champs">Bluff Creek Golf Course</td>
           </tr>
         </tbody>
       </table>
@@ -185,15 +228,35 @@
 <!--Javascript for Stavnes Open Website-->
 <script>
   // Initialize Firebase
-  var config = {
+  let config = {
     apiKey: "AIzaSyAde0EpZCevRIEzaHLGypWcVaeAt4wWTuc",
     authDomain: "stavnes-open.firebaseapp.com",
     databaseURL: "https://stavnes-open.firebaseio.com",
     projectId: "stavnes-open",
-    storageBucket: "",
+    storageBucket: "stavnes-open.appspot.com",
     messagingSenderId: "261812810471"
   };
   firebase.initializeApp(config);
+  let database = firebase.database();
+  $("#add-player").on("click", function(e) {
+    event.preventDefault();
+    let pName = $("#player-name").val().trim();
+    //console.log(pName);
+    let players = {
+      Player: pName
+    };
+    database.ref().push(players);
+    alert("Welcome to the Stavnes Open");
+    //clear for the next player
+    $("#player-name").val("");
+  })
+  database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+    console.log(childSnapshot.val())
+    let pName = childSnapshot.val().Player
+    console.log(pName)
+    //append database info to the table
+    $("#player-table").append("<tr><td>" + pName )
+  });
 </script>
 
 
